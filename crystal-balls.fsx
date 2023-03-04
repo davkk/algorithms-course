@@ -9,17 +9,25 @@
 
 let findX (arr: bool array) =
     let jump =
-        arr.Length |> float |> sqrt |> floor |> int
+        arr.Length
+        |> float
+        |> sqrt
+        |> floor
+        |> int
 
     let rec loop (curr) =
         if curr > arr.Length || arr.[curr] then
             let start = curr - jump
-            start + (arr.[start..] |> Array.findIndex id)
+
+            start
+            + (arr.[start..] |> Array.findIndex id)
         else
             loop (curr + jump)
 
     loop jump
 
-[| for _ in 0 .. 612314 -> false
-   for _ in 0 .. 21 -> true |]
+[|
+    for _ in 0 .. 612314 -> false
+    for _ in 0 .. 21 -> true
+|]
 |> findX

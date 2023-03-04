@@ -15,4 +15,5 @@ let binarySearch (needle: float) (arr: float array) =
 
     loop 0 arr.Length
 
-[| 0. .. 12390813412. |] |> binarySearch 42.
+[| 0. .. 12390813412. |]
+|> binarySearch 42.
