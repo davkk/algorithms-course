@@ -1,24 +1,3 @@
-// use tailcall::tailcall;
-
-// fn stable_point_rec(g: fn(f64) -> f64, initial_guess: f64) -> f64 {
-//
-//     #[tailcall]
-//     fn inner_loop(x: f64, g: fn(f64) -> f64) -> f64 {
-//         let value = g(x);
-//         println!("x0 = {x}");
-//
-//         let error = f64::abs((value - x) / value);
-//
-//         if error < 1e-7 {
-//             x
-//         } else {
-//             inner_loop(value, g)
-//         }
-//     }
-//
-//     inner_loop(initial_guess, g)
-// }
-
 fn bisect(f: fn(f64) -> f64, min: f64, max: f64) -> Option<f64> {
     let mut a = min;
     let mut b = max;
